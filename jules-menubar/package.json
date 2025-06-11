@@ -1,0 +1,56 @@
+{
+  "name": "taskflow-menubar",
+  "version": "1.0.0",
+  "description": "A macOS menu bar task automation app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --mac"
+  },
+  "keywords": [
+    "menubar",
+    "task-manager",
+    "macos"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@emnapi/runtime": "^1.4.3",
+    "electron": "^36.4.0",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "canvas": "^3.1.0",
+    "electron-store": "^10.0.1",
+    "node-pty": "^1.0.0",
+    "simple-git": "^3.28.0"
+  },
+  "build": {
+    "appId": "com.taskflow.menubar",
+    "productName": "TaskFlow",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "assets/icon.png",
+      "extendInfo": {
+        "LSUIElement": 1
+      }
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/*.{ts,tsx}",
+      "!**/*.map",
+      "!create-icons.js",
+      "!create-simple-icons.js",
+      "!README.md"
+    ],
+    "asarUnpack": [
+      "node_modules/simple-git/**/*",
+      "node_modules/node-pty/**/*"
+    ]
+  }
+}
