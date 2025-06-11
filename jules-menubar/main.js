@@ -27,10 +27,10 @@ function createWindow() {
 
   window.loadFile('index.html');
   
-  // Open DevTools in development
-  if (process.env.NODE_ENV !== 'production') {
-    window.webContents.openDevTools({ mode: 'detach' });
-  }
+  // DevTools disabled - uncomment below to enable for debugging
+  // if (process.env.NODE_ENV !== 'production') {
+  //   window.webContents.openDevTools({ mode: 'detach' });
+  // }
 
   window.on('blur', () => {
     if (!window.webContents.isDevToolsOpened()) {
